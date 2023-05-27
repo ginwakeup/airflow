@@ -26,7 +26,7 @@ import sys
 
 from airflow.compat.functools import cache
 
-IS_WINDOWS = platform.system() == "Windows"
+IS_WINDOWS = os.getenv("PLATFORM", platform.system() == "Windows")
 
 log = logging.getLogger(__name__)
 

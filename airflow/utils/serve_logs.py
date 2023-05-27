@@ -22,7 +22,15 @@ import logging
 import os
 import socket
 
-import gunicorn.app.base
+from airflow.utils.platform import IS_WINDOWS
+
+if IS_WINDOWS:
+    import waitress
+    gunicorn_application_class = object
+else:
+    import gunicorn.app.base
+    gunicorn_application_class = gunicorn.app.base.BaseApplication
+
 from flask import Flask, abort, request, send_from_directory
 from jwt.exceptions import (
     ExpiredSignatureError,
@@ -114,7 +122,7 @@ def create_app():
 GunicornOption = collections.namedtuple("GunicornOption", ["key", "value"])
 
 
-class StandaloneGunicornApplication(gunicorn.app.base.BaseApplication):
+class StandaloneGunicornApplication(gunicorn_application_class):
     """
     Standalone Gunicorn application/serve for usage with any WSGI-application.
 
@@ -145,15 +153,16 @@ def serve_logs(port=None):
 
     port = port or conf.getint("logging", "WORKER_LOG_SERVER_PORT")
 
-    # If dual stack is available and IPV6_V6ONLY is not enabled on the socket
-    # then when IPV6 is bound to it will also bind to IPV4 automatically
-    if getattr(socket, "has_dualstack_ipv6", lambda: False)():
-        bind_option = GunicornOption("bind", f"[::]:{port}")
-    else:
-        bind_option = GunicornOption("bind", f"0.0.0.0:{port}")
+    if not IS_WINDOWS:
+        # If dual stack is available and IPV6_V6ONLY is not enabled on the socket
+        # then when IPV6 is bound to it will also bind to IPV4 automatically
+        if getattr(socket, "has_dualstack_ipv6", lambda: False)():
+            bind_option = GunicornOption("bind", f"[::]:{port}")
+        else:
+            bind_option = GunicornOption("bind", f"0.0.0.0:{port}")
 
-    options = [bind_option, GunicornOption("workers", 2)]
-    StandaloneGunicornApplication(wsgi_app, options).run()
+        options = [bind_option, GunicornOption("workers", 2)]
+        StandaloneGunicornApplication(wsgi_app, options).run()
 
 
 if __name__ == "__main__":
