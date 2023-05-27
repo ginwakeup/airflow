@@ -9,7 +9,8 @@ secrets.py
 # Airflow sqlite databases
 airflow.db
 unittests.db
-
+local/logs
+local/
 # Airflow temporary artifacts
 airflow/git_version
 airflow/www/static/coverage/
