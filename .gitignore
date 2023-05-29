@@ -1,3 +1,9 @@
+# KafkaExecutor Fork
+.run
+/local
+/kafka
+
+
 # Airflow configuration
 airflow.cfg
 unittests.cfg
