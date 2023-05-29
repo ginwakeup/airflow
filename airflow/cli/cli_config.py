@@ -1938,6 +1938,23 @@ CELERY_COMMANDS = (
     ),
 )
 
+KAFKA_COMMANDS = (
+    ActionCommand(
+        name="worker",
+        help="Start a Kafka worker node",
+        func=lazy_load_command("airflow.cli.commands.kafka_command.worker"),
+        args=(
+            ARG_QUEUES,
+        ),
+    ),
+    ActionCommand(
+        name="stop",
+        help="Stop the Kafka worker gracefully",
+        func=lazy_load_command("airflow.cli.commands.kafka_command.stop_worker"),
+        args=(ARG_PID, ARG_VERBOSE),
+    ),
+)
+
 CONFIG_COMMANDS = (
     ActionCommand(
         name="get-value",
@@ -2206,6 +2223,14 @@ core_commands: list[CLICommand] = [
             "https://airflow.apache.org/docs/apache-airflow/stable/executor/celery.html"
         ),
         subcommands=CELERY_COMMANDS,
+    ),
+    GroupCommand(
+        name="kafka",
+        help="Kafka components",
+        description=(
+            "Start Kafka components. Works only when using KafkaExecutor."
+        ),
+        subcommands=KAFKA_COMMANDS,
     ),
     ActionCommand(
         name="standalone",
