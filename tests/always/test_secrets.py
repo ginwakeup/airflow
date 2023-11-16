@@ -23,7 +23,7 @@ import pytest
 
 from airflow.configuration import ensure_secrets_loaded, initialize_secrets_backends
 from airflow.models import Connection, Variable
-from airflow.secrets.cache import SecretCache
+from airflow.secrets_.cache import SecretCache
 from tests.test_utils.config import conf_vars
 from tests.test_utils.db import clear_db_variables
 

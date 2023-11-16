@@ -34,7 +34,7 @@ from airflow.exceptions import (
     FileSyntaxError,
     RemovedInAirflow3Warning,
 )
-from airflow.secrets.base_secrets import BaseSecretsBackend
+from airflow.secrets_.base_secrets import BaseSecretsBackend
 from airflow.utils import yaml
 from airflow.utils.file import COMMENT_PATTERN
 from airflow.utils.log.logging_mixin import LoggingMixin

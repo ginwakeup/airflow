@@ -21,7 +21,7 @@ import multiprocessing
 
 import pytest
 
-from airflow.secrets.cache import SecretCache
+from airflow.secrets_.cache import SecretCache
 from tests.test_utils.config import conf_vars
 
 

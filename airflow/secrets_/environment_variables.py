@@ -22,7 +22,7 @@ import os
 import warnings
 
 from airflow.exceptions import RemovedInAirflow3Warning
-from airflow.secrets import BaseSecretsBackend
+from airflow.secrets_ import BaseSecretsBackend
 
 CONN_ENV_PREFIX = "AIRFLOW_CONN_"
 VAR_ENV_PREFIX = "AIRFLOW_VAR_"

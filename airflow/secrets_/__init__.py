@@ -28,9 +28,9 @@ from __future__ import annotations
 
 __all__ = ["BaseSecretsBackend", "DEFAULT_SECRETS_SEARCH_PATH"]
 
-from airflow.secrets.base_secrets import BaseSecretsBackend
+from airflow.secrets_.base_secrets import BaseSecretsBackend
 
 DEFAULT_SECRETS_SEARCH_PATH = [
-    "airflow.secrets.environment_variables.EnvironmentVariablesBackend",
-    "airflow.secrets.metastore.MetastoreBackend",
+    "airflow.secrets_.environment_variables.EnvironmentVariablesBackend",
+    "airflow.secrets_.metastore.MetastoreBackend",
 ]

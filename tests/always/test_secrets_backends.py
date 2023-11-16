@@ -24,9 +24,9 @@ import pytest
 
 from airflow.models.connection import Connection
 from airflow.models.variable import Variable
-from airflow.secrets.base_secrets import BaseSecretsBackend
-from airflow.secrets.environment_variables import EnvironmentVariablesBackend
-from airflow.secrets.metastore import MetastoreBackend
+from airflow.secrets_.base_secrets import BaseSecretsBackend
+from airflow.secrets_.environment_variables import EnvironmentVariablesBackend
+from airflow.secrets_.metastore import MetastoreBackend
 from airflow.utils.session import create_session
 from tests.test_utils.db import clear_db_connections, clear_db_variables
 

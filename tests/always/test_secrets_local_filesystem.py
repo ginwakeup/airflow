@@ -27,8 +27,8 @@ import pytest
 from airflow.configuration import ensure_secrets_loaded
 from airflow.exceptions import AirflowException, AirflowFileParseException, ConnectionNotUnique
 from airflow.models import Variable
-from airflow.secrets import local_filesystem
-from airflow.secrets.local_filesystem import LocalFilesystemBackend
+from airflow.secrets_ import local_filesystem
+from airflow.secrets_.local_filesystem import LocalFilesystemBackend
 from tests.test_utils.config import conf_vars
 
 

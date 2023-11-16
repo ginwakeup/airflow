@@ -44,7 +44,7 @@ def _initialize_map() -> dict[str, Callable]:
     from airflow.models.dagwarning import DagWarning
     from airflow.models.serialized_dag import SerializedDagModel
     from airflow.models.taskinstance import TaskInstance
-    from airflow.secrets.metastore import MetastoreBackend
+    from airflow.secrets_.metastore import MetastoreBackend
 
     functions: list[Callable] = [
         DagFileProcessor.update_import_errors,

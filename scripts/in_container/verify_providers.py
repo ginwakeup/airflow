@@ -34,7 +34,7 @@ from typing import NamedTuple
 from rich.console import Console
 
 from airflow.exceptions import AirflowOptionalProviderFeatureException
-from airflow.secrets import BaseSecretsBackend
+from airflow.secrets_ import BaseSecretsBackend
 
 console = Console(width=400, color_system="standard")
 
@@ -462,7 +462,7 @@ def get_package_class_summary(
     """
     from airflow.hooks.base import BaseHook
     from airflow.models.baseoperator import BaseOperator
-    from airflow.secrets import BaseSecretsBackend
+    from airflow.secrets_ import BaseSecretsBackend
     from airflow.sensors.base import BaseSensorOperator
     from airflow.triggers.base import BaseTrigger
 

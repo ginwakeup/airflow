@@ -25,7 +25,7 @@ from sqlalchemy import select
 
 from airflow.api_internal.internal_api_call import internal_api_call
 from airflow.exceptions import RemovedInAirflow3Warning
-from airflow.secrets import BaseSecretsBackend
+from airflow.secrets_ import BaseSecretsBackend
 from airflow.utils.session import NEW_SESSION, provide_session
 
 if TYPE_CHECKING:

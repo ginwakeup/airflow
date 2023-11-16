@@ -1996,7 +1996,7 @@ my_postgres_conn:
         @task_decorator
         def check_task():
             from airflow.configuration import secrets_backend_list
-            from airflow.secrets.local_filesystem import LocalFilesystemBackend
+            from airflow.secrets_.local_filesystem import LocalFilesystemBackend
 
             assert isinstance(secrets_backend_list[0], LocalFilesystemBackend)
             local_secrets: LocalFilesystemBackend = secrets_backend_list[0]

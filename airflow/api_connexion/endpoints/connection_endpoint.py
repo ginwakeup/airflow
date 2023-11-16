@@ -37,7 +37,7 @@ from airflow.api_connexion.schemas.connection_schema import (
 )
 from airflow.configuration import conf
 from airflow.models import Connection
-from airflow.secrets.environment_variables import CONN_ENV_PREFIX
+from airflow.secrets_.environment_variables import CONN_ENV_PREFIX
 from airflow.security import permissions
 from airflow.utils import helpers
 from airflow.utils.log.action_logger import action_event_from_permission

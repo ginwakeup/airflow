@@ -35,7 +35,7 @@ from airflow.exceptions import AirflowNotFoundException
 from airflow.hooks.base import BaseHook
 from airflow.models import Connection
 from airflow.providers_manager import ProvidersManager
-from airflow.secrets.local_filesystem import load_connections_dict
+from airflow.secrets_.local_filesystem import load_connections_dict
 from airflow.utils import cli as cli_utils, helpers, yaml
 from airflow.utils.cli import suppress_logs_and_warning
 from airflow.utils.db import create_default_connections as db_create_default_connections

@@ -49,7 +49,7 @@ from airflow.models.dag import DagModel
 from airflow.models.dagwarning import DagWarning
 from airflow.models.db_callback_request import DbCallbackRequest
 from airflow.models.serialized_dag import SerializedDagModel
-from airflow.secrets.cache import SecretCache
+from airflow.secrets_.cache import SecretCache
 from airflow.stats import Stats
 from airflow.utils import timezone
 from airflow.utils.file import list_py_file_paths, might_contain_dag

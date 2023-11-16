@@ -104,7 +104,7 @@ from airflow.models.taskinstance import (
     TaskReturnCode,
     clear_task_instances,
 )
-from airflow.secrets.local_filesystem import LocalFilesystemBackend
+from airflow.secrets_.local_filesystem import LocalFilesystemBackend
 from airflow.security import permissions
 from airflow.stats import Stats
 from airflow.timetables.base import DagRunInfo, DataInterval, TimeRestriction, Timetable

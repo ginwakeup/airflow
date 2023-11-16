@@ -28,7 +28,7 @@ from pathlib import Path
 import airflow
 from airflow.hooks.base import BaseHook
 from airflow.models.baseoperator import BaseOperator
-from airflow.secrets import BaseSecretsBackend
+from airflow.secrets_ import BaseSecretsBackend
 from airflow.sensors.base import BaseSensorOperator
 
 program = f"./{__file__}" if not __file__.startswith("./") else __file__
