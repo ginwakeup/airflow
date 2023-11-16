@@ -23,7 +23,7 @@ from typing import cast
 
 from airflow import DAG
 from airflow.decorators import task
-from airflow.io.store.path import ObjectStoragePath
+from airflow._io.store.path import ObjectStoragePath
 from airflow.providers.common.io.operators.file_transfer import FileTransferOperator
 from airflow.utils.trigger_rule import TriggerRule
 
