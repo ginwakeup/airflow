@@ -4,3 +4,6 @@ python -m pip install \
     --global-option="-I$(brew --prefix graphviz)/include/" \
     --global-option="-L$(brew --prefix graphviz)/lib/" \
     pygraphviz
+
+
+python -m pip install psycopg2-binary

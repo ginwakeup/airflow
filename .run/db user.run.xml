@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="scheduler" type="PythonConfigurationType" factoryName="Python">
+  <configuration default="false" name="db user" type="PythonConfigurationType" factoryName="Python">
     <module name="airflow" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
@@ -13,7 +13,7 @@
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
     <option name="SCRIPT_NAME" value="airflow" />
-    <option name="PARAMETERS" value="scheduler" />
+    <option name="PARAMETERS" value="users create --role Admin --username admin --password admin --email admin@example.com --firstname foo --lastname bar" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />
     <option name="MODULE_MODE" value="true" />
